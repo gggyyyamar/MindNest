@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mindnest.LoginController"
+            prefWidth="400" prefHeight="300">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="140" layoutY="20"
+               text="MindNest Login"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- Email Input -->
+        <Label layoutX="70" layoutY="80" text="Email:" />
+        <TextField fx:id="emailField" layoutX="120" layoutY="75"
+                   prefWidth="200" promptText="Enter your email" />
+
+        <!-- Status Message -->
+        <Label fx:id="statusLabel" layoutX="70" layoutY="120"
+               textFill="red" />
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" layoutX="120" layoutY="160"
+                text="Login" onAction="#handleLogin" />
+
+        <!-- Sign Up Redirect Button -->
+        <Button fx:id="signupRedirectButton" layoutX="200" layoutY="160"
+                text="Sign Up" onAction="#handleSignupRedirect"
+                visible="false" />
+
+    </children>
+</AnchorPane>

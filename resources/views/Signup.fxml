@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mindnest.SignupController"
+            stylesheets="@../styles/signup.css"
+            prefWidth="400" prefHeight="400">
+
+    <children>
+        <!-- Rounded rectangle background container -->
+        <VBox layoutX="900" layoutY="50" prefWidth="300" prefHeight="500" spacing="15" styleClass="form-box">
+            <children>
+                <Label text="Sign Up" styleClass="heading-label"/>
+
+                <TextField fx:id="fullNameField" promptText="Full Name"/>
+                <TextField fx:id="emailField" promptText="Email"/>
+                <PasswordField fx:id="passwordField" promptText="Password"/>
+
+                <Button fx:id="signupButton" text="Sign Up" onAction="#handleSignup"/>
+                <Label fx:id="statusLabel" textFill="red"/>
+            </children>
+        </VBox>
+    </children>
+
+</AnchorPane>
+

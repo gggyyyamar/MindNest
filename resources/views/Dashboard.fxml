@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mindnest.DashboardController" prefWidth="400" prefHeight="300">
+    <children>
+        <Label fx:id="welcomeLabel" layoutX="120" layoutY="20" text="Welcome, Student!"/>
+
+        <Button fx:id="findButton" layoutX="130" layoutY="80" text="Find Therapist" onAction="#handleFindTherapist"/>
+        <Button fx:id="bookButton" layoutX="130" layoutY="130" text="Book Session" onAction="#handleBookSession"/>
+        <Button fx:id="logoutButton" layoutX="130" layoutY="180" text="Log Out" onAction="#handleLogout"/>
+    </children>
+</AnchorPane>
