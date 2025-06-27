@@ -6,11 +6,11 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.mindnest.SignupController"
             stylesheets="@../styles/signup.css"
-            prefWidth="400" prefHeight="400">
+            prefWidth="400" prefHeight="300">
 
     <children>
         <!-- Rounded rectangle background container -->
-        <VBox layoutX="900" layoutY="50" prefWidth="300" prefHeight="500" spacing="15" styleClass="form-box">
+        <VBox layoutX="300" layoutY="50" prefWidth="300" prefHeight="200" spacing="15" styleClass="form-box">
             <children>
                 <Label text="Sign Up" styleClass="heading-label"/>
 

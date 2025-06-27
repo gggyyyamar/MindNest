@@ -7,28 +7,33 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        System.out.println("🟢 Launching MindNest Sign Up Page...");
+    public void start(Stage primaryStage) {
+        try {
+            URL fxmlLocation = getClass().getResource("/views/login.fxml");
 
-        // Load the SignUp.fxml file
-        URL fxmlLocation = getClass().getResource("/views/Signup.fxml");
+            if (fxmlLocation == null) {
+                LOGGER.severe("therapist.fxml not found in /views.");
+                return;
+            }
 
-        if (fxmlLocation == null) {
-            System.out.println("❌ ERROR: Signup.fxml not found! Make sure it's in resources/views.");
-            return;
+            Parent root = FXMLLoader.load(fxmlLocation);
+            Scene scene = new Scene(root, 900, 600);
+
+            primaryStage.setTitle("MindNest - Therapist Finder");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error loading therapist.fxml", e);
         }
-
-        Parent root = FXMLLoader.load(fxmlLocation);
-
-        primaryStage.setTitle("MindNest - Sign Up");
-        primaryStage.setScene(new Scene(root, 600, 400));
-        primaryStage.show();
-
-        System.out.println("🚀 Sign Up page should now be visible.");
     }
 
     public static void main(String[] args) {

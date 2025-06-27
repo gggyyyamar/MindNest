@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mindnest.TherapistListController"
+            prefWidth="900" prefHeight="600"
+            styleClass="root"
+            stylesheets="@../styles/therapist.css">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox spacing="15" prefWidth="200" styleClass="sidebar" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Categories" styleClass="sidebar-title"/>
+                <Button text="Trauma" onAction="#handleTrauma"/>
+                <Button text="Depression/Anxiety" onAction="#handleDepression"/>
+                <Button text="Addiction &amp; Drug" onAction="#handleAddiction"/>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Therapist Grid -->
+    <center>
+        <VBox spacing="10" alignment="TOP_CENTER" padding="20" styleClass="main-content" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <Label text="Recommended Therapist" styleClass="main-title"/>
+                <FlowPane fx:id="therapistGrid" hgap="20" vgap="20" prefWrapLength="600" styleClass="therapist-grid"/>
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>
