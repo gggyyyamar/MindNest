@@ -1,22 +1,5 @@
-## Recent Changes Summary
+## 🛠️ Recent Changes Summary
 
-### Removed: Static "Book Therapist" Button from Dashboard
-
-- The **static booking button** on the Dashboard was removed.
-- Booking logic is no longer hardcoded to a general booking page.
----
-### Added: Clickable Therapist Cards on *Find Therapist* Page
-
-- Therapist cards in the **Find Therapist** (`therapist.fxml`) view are now interactive.
-- Clicking a therapist:
-  - Navigates to the **Book Therapist** page (`BookTherapist.fxml`)
-  - Passes the selected therapist's **name** and **specialty** dynamically
----
-
-### Introduced: Dynamic Data Passing Between Scenes
-
-- The booking screen is no longer hardcoded with therapist info.
-- A method `setTherapistData(String name, String specialty)` was added to `BookTherapistController`.
-- Therapist bio and label content are now **loaded based on the selected therapist**.
-
----
+The static "Book Therapist" button on the Dashboard has been removed. 
+Users can now click on therapist cards in the *Find Therapist* page to navigate to a dynamically loaded *Book Therapist* page. 
+Therapist-specific data — such as name, specialty, and bio — is passed between scenes using a new method (`setTherapistData(...)`) in the controller. This allows each booking screen to reflect the selected therapist's profile.
