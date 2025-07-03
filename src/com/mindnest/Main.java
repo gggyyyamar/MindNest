@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+    static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     @Override
     public void start(Stage primaryStage) {

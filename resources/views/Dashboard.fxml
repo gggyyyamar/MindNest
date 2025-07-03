@@ -28,10 +28,10 @@
                     onAction="#handleFindTherapist"
                     styleClass="primary-button"/>
 
-            <Button fx:id="bookButton"
-                    text="Book a Session"
-                    onAction="#handleBookSession"
-                    styleClass="secondary-button"/>
+<!--            <Button fx:id="bookButton"-->
+<!--                    text="Book a Session"-->
+<!--                    onAction="#handleBookSession"-->
+<!--                    styleClass="secondary-button"/>-->
 
             <Button fx:id="logoutButton"
                     text="Log Out"
