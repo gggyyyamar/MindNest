@@ -4,17 +4,13 @@
 
 - The **static booking button** on the Dashboard was removed.
 - Booking logic is no longer hardcoded to a general booking page.
-- This change improves navigation flow and enables therapist-specific context.
-
 ---
-
 ### Added: Clickable Therapist Cards on *Find Therapist* Page
 
-- Therapist cards in the **Find Therapist** (`FindTherapist.fxml`) view are now interactive.
+- Therapist cards in the **Find Therapist** (`therapist.fxml`) view are now interactive.
 - Clicking a therapist:
   - Navigates to the **Book Therapist** page (`BookTherapist.fxml`)
   - Passes the selected therapist's **name** and **specialty** dynamically
-
 ---
 
 ### Introduced: Dynamic Data Passing Between Scenes
