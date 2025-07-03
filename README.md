@@ -1,4 +1,4 @@
-## 🛠️ Recent Changes Summary
+#### Recent Changes Summary
 
 The static "Book Therapist" button on the Dashboard has been removed. 
 Users can now click on therapist cards in the *Find Therapist* page to navigate to a dynamically loaded *Book Therapist* page. 
