@@ -1,47 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mindnest.LoginController"
-            prefWidth="400" prefHeight="300"
-            stylesheets="@../styles/login.css">
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.mindnest.LoginController"
+           prefWidth="400" prefHeight="450"
+           stylesheets="@../styles/login.css">
 
-    <children>
+    <VBox alignment="TOP_CENTER"
+          spacing="20"
+          maxWidth="300"
+          maxHeight="350"
+          StackPane.alignment="CENTER"
+          styleClass="login-panel">
 
-        <!-- Semi-transparent rounded container -->
-        <VBox layoutX="300" layoutY="40"
-              prefWidth="300" prefHeight="220"
-              spacing="15" alignment="TOP_CENTER"
-              styleClass="login-panel">
+        <!-- App Branding -->
+        <Label text="MindNest"
+               styleClass="app-title"/>
 
-            <children>
+        <Label text="Login to Continue"
+               styleClass="subtitle"/>
 
-                <Label text="MindNest Login" styleClass="title-label"/>
-
-                <HBox spacing="10" alignment="CENTER_LEFT">
-                    <Label text="Email:"/>
-                    <TextField fx:id="emailField"
-                               prefWidth="180"
-                               promptText="Enter your email"/>
-                </HBox>
-
-                <Label fx:id="statusLabel"
-                       textFill="red" />
-
-                <HBox spacing="10" alignment="CENTER">
-                    <Button fx:id="loginButton"
-                            text="Login"
-                            onAction="#handleLogin"/>
-                    <Button fx:id="signupRedirectButton"
-                            text="Sign Up"
-                            onAction="#handleSignupRedirect"
-                            visible="false"/>
-                </HBox>
-
-            </children>
+        <!-- Email Input -->
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Email:"/>
+            <TextField fx:id="emailField"
+                       promptText="Enter your email"
+                       maxWidth="250"/>
         </VBox>
 
-    </children>
-</AnchorPane>
+        <!-- Feedback Label -->
+        <Label fx:id="statusLabel"
+               wrapText="true"
+               styleClass="status-label"/>
+
+        <!-- Buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="loginButton"
+                    text="Login"
+                    onAction="#handleLogin"
+                    styleClass="primary-button"/>
+            <Button fx:id="signupRedirectButton"
+                    text="Sign Up"
+                    onAction="#handleSignupRedirect"
+                    visible="false"
+                    styleClass="secondary-button"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

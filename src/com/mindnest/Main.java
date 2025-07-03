@@ -29,6 +29,10 @@ public class Main extends Application {
 
             primaryStage.setTitle("MindNest - Therapist Finder");
             primaryStage.setScene(scene);
+            primaryStage.setWidth(1000);
+            primaryStage.setHeight(600);
+            primaryStage.setResizable(false); // Optional, for consistent layout
+            primaryStage.centerOnScreen();
             primaryStage.show();
 
         } catch (Exception e) {

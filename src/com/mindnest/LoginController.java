@@ -61,6 +61,10 @@ public class LoginController {
             Stage stage = (Stage) signupRedirectButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("MindNest - Sign Up");
+            stage.setWidth(1000);
+            stage.setHeight(600);
+            stage.setResizable(false);
+            stage.centerOnScreen();
         } catch (Exception e) {
             e.printStackTrace();
             statusLabel.setText("Could not open Sign Up page.");

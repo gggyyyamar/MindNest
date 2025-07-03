@@ -1,59 +1,60 @@
-.root {
-    -fx-background-image: url("../images/ggy1.jpg");
-    -fx-background-size: cover;
-    -fx-background-position: center center;
-    -fx-background-repeat: no-repeat;
-    -fx-font-family: "Segoe UI", sans-serif;
+/* signup.css */
 
-}
-
-.label {
-    -fx-text-fill: #333333;
-    -fx-font-size: 14px;
-}
-
-.button {
-    -fx-background-color: #0066cc;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-}
-
-.text-field, .password-field {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 4;
-    -fx-padding: 6 10 6 10;
-}
-.form-box {
-    -fx-background-color: rgba(255, 255, 255, 0.7); /* White with transparency */
-    -fx-background-radius: 12;
+.signup-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
     -fx-padding: 25;
+    -fx-background-radius: 15;
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 15;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);
 }
 
-.vbox {
-    -fx-alignment: center;
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4e73df; /* calming blue for mental health */
 }
 
-.text-field, .password-field {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #b3d9ff;
-    -fx-border-radius: 4;
-    -fx-padding: 6 10 6 10;
+.subtitle {
     -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
 }
 
-.button {
-    -fx-background-color: #0066cc;
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: red;
+    -fx-padding: 0 0 0 5;
+}
+
+.primary-button {
+    -fx-background-color: #4e73df;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 6;
-    -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-padding: 6 16;
 }
 
-.heading-label {
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #003366;
+.primary-button:hover {
+    -fx-background-color: #3c5ecb;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #4e73df;
+    -fx-text-fill: #4e73df;
+    -fx-background-radius: 8;
+    -fx-padding: 6 16;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e8edff;
+}
+
+.text-field,
+.password-field,
+.combo-box {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #c0c0c0;
+    -fx-padding: 5 8;
 }

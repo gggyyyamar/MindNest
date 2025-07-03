@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mindnest.SignupController"
-            stylesheets="@../styles/signup.css"
-            prefWidth="400" prefHeight="300">
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.mindnest.SignupController"
+           prefWidth="500" prefHeight="550"
+           stylesheets="@../styles/signup.css">
 
-    <children>
-        <!-- Rounded rectangle background container -->
-        <VBox layoutX="300" layoutY="50" prefWidth="300" prefHeight="200" spacing="15" styleClass="form-box">
-            <children>
-                <Label text="Sign Up" styleClass="heading-label"/>
+    <VBox alignment="TOP_CENTER"
+          spacing="20"
+          maxWidth="350"
+          maxHeight="500"
+          StackPane.alignment="CENTER"
+          styleClass="signup-panel">
 
-                <TextField fx:id="fullNameField" promptText="Full Name"/>
-                <TextField fx:id="emailField" promptText="Email"/>
-                <PasswordField fx:id="passwordField" promptText="Password"/>
+        <!-- Title -->
+        <Label text="MindNest" styleClass="app-title"/>
+        <Label text="Create Your Account" styleClass="subtitle"/>
 
-                <Button fx:id="signupButton" text="Sign Up" onAction="#handleSignup"/>
-                <Label fx:id="statusLabel" textFill="red"/>
-            </children>
+        <!-- Input Fields -->
+        <VBox spacing="10">
+            <TextField fx:id="nameField" promptText="Full Name"/>
+            <TextField fx:id="emailField" promptText="Email Address"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"/>
         </VBox>
-    </children>
 
-</AnchorPane>
+        <!-- User Role -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Sign up as:"/>
+            <ComboBox fx:id="userTypeCombo" promptText="Select Role"/>
+        </HBox>
 
+        <!-- Status Label -->
+        <Label fx:id="statusLabel"
+               wrapText="true"
+               styleClass="status-label"/>
+
+        <!-- Buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="signupButton"
+                    text="Sign Up"
+                    onAction="#handleSignup"
+                    styleClass="primary-button"/>
+            <Button fx:id="loginRedirectButton"
+                    text="Back to Login"
+                    onAction="#handleLoginRedirect"
+                    styleClass="secondary-button"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

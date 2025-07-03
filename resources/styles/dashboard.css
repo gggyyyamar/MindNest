@@ -1,18 +1,54 @@
+/* dashboard.css */
+
 .dashboard-panel {
-    -fx-background-color: rgba(255, 255, 255, 0.75); /* semi-transparent white */
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-padding: 40;
     -fx-background-radius: 15;
-    -fx-padding: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.2, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.08), 10, 0, 0, 4);
 }
 
 .welcome-label {
-    -fx-font-size: 18px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
+    -fx-text-fill: #4e73df;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
 }
-.root {
-    -fx-background-image: url("../images/ggy1.jpg");
-    -fx-background-size: cover;
-    -fx-background-position: center center;
-    -fx-background-repeat: no-repeat;
+
+.primary-button {
+    -fx-background-color: #4e73df;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3c5ecb;
+}
+
+.secondary-button {
+    -fx-background-color: #f1f4fa;
+    -fx-text-fill: #4e73df;
+    -fx-border-color: #4e73df;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e2e6ea;
+}
+
+.danger-button {
+    -fx-background-color: #e74a3b;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c0392b;
 }

@@ -4,32 +4,39 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mindnest.DashboardController"
-            prefWidth="1000" prefHeight="600"
-            stylesheets="@../styles/dashboard.css">
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.mindnest.DashboardController"
+           prefWidth="700" prefHeight="500"
+           stylesheets="@../styles/dashboard.css">
 
-    <children>
+    <VBox alignment="TOP_CENTER"
+          spacing="30"
+          StackPane.alignment="CENTER"
+          maxWidth="400"
+          maxHeight="500"
+          styleClass="dashboard-panel">
 
-        <!-- Welcome Label -->
+        <!-- Welcome Text -->
         <Label fx:id="welcomeLabel"
-               layoutX="350" layoutY="40"
-               text="Welcome, Student to MindNest"
+               text="Welcome to MindNest"
                styleClass="welcome-label"/>
 
-        <!-- Transparent Rounded VBox Panel -->
-        <VBox layoutX="300" layoutY="100"
-              prefWidth="400" prefHeight="300"
-              spacing="20"
-              alignment="CENTER"
-              styleClass="dashboard-panel">
+        <!-- Buttons -->
+        <VBox spacing="20" alignment="CENTER">
+            <Button fx:id="findButton"
+                    text="Find a Therapist"
+                    onAction="#handleFindTherapist"
+                    styleClass="primary-button"/>
 
-            <children>
-                <Button fx:id="findButton" text="Find Therapist" onAction="#handleFindTherapist"/>
-                <Button fx:id="bookButton" text="Book Session" onAction="#handleBookSession"/>
-                <Button fx:id="logoutButton" text="Log Out" onAction="#handleLogout"/>
-            </children>
+            <Button fx:id="bookButton"
+                    text="Book a Session"
+                    onAction="#handleBookSession"
+                    styleClass="secondary-button"/>
+
+            <Button fx:id="logoutButton"
+                    text="Log Out"
+                    onAction="#handleLogout"
+                    styleClass="danger-button"/>
         </VBox>
-
-    </children>
-</AnchorPane>
+    </VBox>
+</StackPane>
