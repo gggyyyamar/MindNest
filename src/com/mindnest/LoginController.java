@@ -6,14 +6,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import java.util.HashMap;
+import java.util.Map;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoginController {
 
+    private Map<String, String> registeredUsers = new HashMap<>();
+
+
     @FXML
     private TextField emailField;
+
+    @FXML
+    private PasswordField passwordField;
 
     @FXML
     private Label statusLabel;
@@ -33,6 +41,10 @@ public class LoginController {
         registeredEmails.add("student1@uni.com");
         registeredEmails.add("student2@uni.com");
 
+        // Example hardcoded users — replace with DB or file later
+        registeredUsers.put("grace@example.com", "password123");
+        registeredUsers.put("john@mindnest.com", "securePass");
+
         // Hide signup redirect button initially
         signupRedirectButton.setVisible(false);
     }
@@ -40,15 +52,26 @@ public class LoginController {
     @FXML
     private void handleLogin() {
         String email = emailField.getText();
+        String password = passwordField.getText();
 
         if (email.isEmpty()) {
             statusLabel.setText("Please enter your email.");
             return;
         }
+        if (password.isEmpty()) {
+            statusLabel.setText("Please enter your password.");
+            return;
+        }
 
         if (registeredEmails.contains(email)) {
-            goToDashboard(email);
-        } else {
+            String storedPassword = registeredUsers.get(email);
+            if (storedPassword != null && storedPassword.equals(password)) {
+                goToDashboard(email);
+            } else {
+                statusLabel.setText("Incorrect password. Please try again.");
+            }
+        }
+        else {
             statusLabel.setText("Email not found. Would you like to sign up?");
             signupRedirectButton.setVisible(true);
         }
