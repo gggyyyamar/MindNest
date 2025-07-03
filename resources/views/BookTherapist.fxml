@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            style="-fx-background-color: linear-gradient(to bottom, #f0f4ff, #ffffff); -fx-font-family: 'Segoe UI', sans-serif;">
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="30" prefWidth="1000" prefHeight="640">
+            <padding><Insets top="30" left="30" right="30" bottom="30"/></padding>
+
+            <!-- Header -->
+            <Label text="Book a Therapist"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #34495e;" />
+
+            <!-- Main Layout -->
+            <HBox spacing="50" alignment="CENTER">
+
+                <!-- Left: Therapist Profile Card -->
+                <VBox spacing="15" alignment="TOP_CENTER"
+                      style="-fx-background-color: white; -fx-background-radius: 15;
+                             -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.15), 10, 0.1, 0, 6);"
+                      prefWidth="400" maxHeight="500">
+                    <padding><Insets top="20" bottom="20" left="25" right="25"/></padding>
+
+                    <ImageView fx:id="therapistImage" fitWidth="120" fitHeight="120"
+                               style="-fx-background-radius: 50%;">
+                        <image>
+                            <Image url="https://via.placeholder.com/120x120.png?text=Profile"/>
+                        </image>
+                    </ImageView>
+
+                    <Label fx:id="therapistName" text="Therapist 1"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+                    <Label fx:id="therapistSpecialty"
+                           text="Student Stress &amp; Anxiety"
+                           style="-fx-text-fill: #636e72;" />
+
+                    <Label fx:id="therapistRating" text="⭐ 4.8 / 5" style="-fx-text-fill: #f1c40f;" />
+
+                    <TextArea fx:id="therapistBio"
+                              editable="false"
+                              wrapText="true"
+                              prefHeight="120"
+                              prefWidth="340"
+                              style="-fx-border-color: transparent; -fx-background-color: #f9f9f9; -fx-font-size: 13px; -fx-text-fill: #2d3436;" />
+
+                </VBox>
+
+                <!-- Right: Booking Form -->
+                <VBox spacing="18" alignment="TOP_LEFT"
+                      style="-fx-background-color: white; -fx-background-radius: 15;
+                             -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 10, 0.1, 0, 5);"
+                      prefWidth="400">
+                    <padding><Insets top="25" right="30" bottom="25" left="30"/></padding>
+
+                    <Label text="Choose Date:" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+                    <DatePicker fx:id="datePicker" />
+
+                    <Label text="Choose Time:" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+                    <ComboBox fx:id="timeComboBox" promptText="Select Time">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="10:00 AM"/>
+                                <String fx:value="11:30 AM"/>
+                                <String fx:value="2:00 PM"/>
+                                <String fx:value="4:00 PM"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <!-- Spacer -->
+                    <Region prefHeight="20"/>
+
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button fx:id="backButton"
+                                text="← Back"
+                                style="-fx-background-color: #dfe6e9; -fx-text-fill: #2d3436;
+                                       -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 12;" />
+
+                        <Button fx:id="bookButton"
+                                text="Book Now"
+                                style="-fx-background-color: #00cec9; -fx-text-fill: white;
+                                       -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 12;" />
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -36,18 +36,46 @@ public class TherapistListController implements Initializable {
 
             Circle avatar = new Circle(30, Color.LIGHTGRAY);
 
-            Label nameLabel = new Label("Therapist " + i);
+            String therapistName = "Therapist " + i;
+            Label nameLabel = new Label(therapistName);
             nameLabel.getStyleClass().add("therapist-name");
 
             Label categoryLabel = new Label(category.equals("All") ? "General Mental Health" : category);
             categoryLabel.getStyleClass().add("therapist-category");
 
             card.getChildren().addAll(avatar, nameLabel, categoryLabel);
+
+            // 👇 Make card clickable
+            card.setOnMouseClicked(event -> {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookTherapist.fxml"));
+
+                    // Custom controller instance to pass data
+                    BookingController controller = new BookingController();
+                    controller.setTherapistData(therapistName, categoryLabel.getText());
+
+                    loader.setController(controller);
+                    Parent root = loader.load();
+
+                    Stage stage = (Stage) therapistGrid.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Book Appointment");
+                    stage.setWidth(1000);
+                    stage.setHeight(600);
+                    stage.setResizable(false);
+                    stage.centerOnScreen();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
             therapistGrid.getChildren().add(card);
         }
 
         System.out.println("Loaded category: " + category);
     }
+
 
     @FXML
     private void handleTrauma() {

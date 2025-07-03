@@ -40,12 +40,12 @@ public class DashboardController {
 
     @FXML
     private void handleBookSession() {
-        switchScene("/views/book.fxml", "Book a Session");
+        switchScene("/views/BookTherapist.fxml", "Book a Session");
     }
 
     @FXML
     private void handleLogout() {
-        switchScene("/views/Login.fxml", "MindNest - Login");
+        switchScene("/views/login.fxml", "MindNest - Login");
     }
 
     private void switchScene(String fxmlPath, String title) {
